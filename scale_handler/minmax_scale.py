@@ -5,10 +5,10 @@ import numpy as np
 class minmax_scale(abstract_scale):
     def __init__(self):
         super().__init__()
-        scale_type = 'minmax'
-        self.scale_params['scale_type'] = scale_type
 
     def calc_scale(self, input, col_name):
+        self.output = list()
+        self.scale_params = dict()
         col_num = len(input[0])
         for idx in range(0, col_num):
             col_value_list = input[:, idx]
@@ -20,7 +20,7 @@ class minmax_scale(abstract_scale):
         self.output = np.array(self.output).T
 
     def calc_reconstruct_scale(self, input, params):
-        del(params["scale_type"])
+        self.reconstruct = list()
         key_list = list(params.keys())
         for id in range(len(key_list)):
             col_input = input[:, id]

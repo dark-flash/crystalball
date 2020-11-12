@@ -13,9 +13,17 @@
       "block_id": 2,
       "block_name": "protein_w2v",
       "process_handler": "protein_w2v_feature",
-      "scale": "",
+      "scale": "minmax",
       "predict_missing_value": false,
       "args": "window:3|model_name:word2vec_for_protein.model"
+    },
+    {
+      "block_id": 3,
+      "block_name": "protein_2gram_tfidf",
+      "process_handler": "protein_tfidf_feature",
+      "scale": "minmax",
+      "predict_missing_value": false,
+      "args": "gram:2|model_name:my_tfidf2gram.pkl"
     }
   ]
 }

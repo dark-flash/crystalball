@@ -2,6 +2,8 @@ import sys
 import json
 import pandas as pd
 import random
+import copy
+
 
 def load_feature_file(feature_file):
     with open(feature_file, 'r') as f:
@@ -57,9 +59,9 @@ def get_process_handler_dict(protein_feature, smile_feature, register_handler_di
     for config in protein_feature:
         handler_name = config["process_handler"]
         feature_name_config_dict[config["block_name"]] = config
-        print(config)
+        #print(config)
         if handler_name in register_handler_dict.keys():
-            handler = register_handler_dict[handler_name]
+            handler = copy.deepcopy(register_handler_dict[handler_name])
             handler.initialize(config["args"])
             protein_process_handler_dict[config["block_name"]] = handler
         else:
@@ -68,7 +70,7 @@ def get_process_handler_dict(protein_feature, smile_feature, register_handler_di
     for config in smile_feature:
         handler_name = config["process_handler"]
         feature_name_config_dict[config["block_name"]] = config
-        print(config)
+        #print(config)
         if handler_name in register_handler_dict.keys():
             handler = register_handler_dict[handler_name]
             handler.initialize(config["args"])

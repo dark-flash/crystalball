@@ -20,7 +20,7 @@ class protein_tfidf_feature(abstract_feature):
             if named_paramter not in self.params_dict.keys():
                 raise ValueError("parametr {} not contain!!".format(named_paramter))
 
-        gram_model_path_prefix = '/Users/siqi/PycharmProjects/Crystalball/resources/pretrain_model/'
+        gram_model_path_prefix = '/Users/siqi/crystalball/resources/pretrain_model/'
         gram_model_path = gram_model_path_prefix + self.params_dict['model_name']
         self.model = pickle.load(open(gram_model_path, 'rb'))
 

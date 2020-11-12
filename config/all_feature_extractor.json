@@ -4,6 +4,7 @@
   "protein_feature_file": "/Users/siqi/crystalball/config/protein_feature.json",
   "smiles_feature_file": "/Users/siqi/crystalball/config/smiles_feature.json",
   "scale_file_path_prefix": "/Users/siqi/crystalball/result/",
+  "sign_index_file_path_prefix": "",
   "middle_file_prefix": "/Users/siqi/crystalball/result/",
   "train_process_file_prefix_path": "/Users/siqi/crystalball/result/",
   "test_process_file_prefix_path": "/Users/siqi/crystalball/result/"
