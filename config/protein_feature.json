@@ -1,0 +1,21 @@
+{
+  "save_middle": true,
+  "feature_list": [
+    {
+      "block_id": 1,
+      "block_name": "protein_1gram_tfidf",
+      "process_handler": "protein_tfidf_feature",
+      "scale": "minmax",
+      "predict_missing_value": false,
+      "args": "gram:1|model_name:my_tfidf1gram.pkl"
+    },
+    {
+      "block_id": 2,
+      "block_name": "protein_w2v",
+      "process_handler": "protein_w2v_feature",
+      "scale": "",
+      "predict_missing_value": false,
+      "args": "window:3|model_name:word2vec_for_protein.model"
+    }
+  ]
+}
